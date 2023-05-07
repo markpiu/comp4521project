@@ -6,4 +6,5 @@
     <string name="register">Register</string>
     <string name="click_to_login">Have an Account? Click to Login</string>
     <string name="click_to_register">Do not have an account? Click to Login</string>
+    <string name="logout">Logout</string>
 </resources>
