@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Comp 4521 project</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Have an Account? Click to Login</string>
+    <string name="click_to_register">Do not have an account? Click to Login</string>
 </resources>
