@@ -10,6 +10,11 @@
 
     tools:context=".Login">
 
+    <ImageView
+        android:id="@+id/image_logo_login"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        app:srcCompat="@drawable/fiteatlogo" />
     <TextView
         android:text="@string/login"
         android:layout_width="match_parent"
@@ -46,7 +51,16 @@
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></ProgressBar>
+
+    <TextView
+        android:id="@+id/ForgotPassword"
+        android:layout_margin="5sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/forgotpassword"
+        android:gravity="center"/>
     <Button
+        android:layout_margin="10sp"
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,5 +74,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"/>
+
+    <TextView
+        android:paddingTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/otherloginoption"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/image_googlesignin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_light" />
 
 </LinearLayout>

@@ -7,4 +7,6 @@
     <string name="click_to_login">Have an Account? Click to Login</string>
     <string name="click_to_register">Do not have an account? Click to Login</string>
     <string name="logout">Logout</string>
+    <string name="otherloginoption">Or sign in with</string>
+    <string name="forgotpassword">Forgot your password? Click here</string>
 </resources>
