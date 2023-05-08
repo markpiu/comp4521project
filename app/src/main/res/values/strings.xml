@@ -9,4 +9,14 @@
     <string name="logout">Logout</string>
     <string name="otherloginoption">Or sign in with</string>
     <string name="forgotpassword">Forgot your password? Click here</string>
+    <string name="profile_setup">Profile Setup</string>
+    <string name="username">Username</string>
+    <string name="dob">Date of Birth</string>
+    <string-array name="activity_level_array">
+        <item>None</item>
+        <item>Low</item>
+        <item>Moderate</item>
+        <item>High</item>
+        <item>Extreme</item>
+    </string-array>
 </resources>

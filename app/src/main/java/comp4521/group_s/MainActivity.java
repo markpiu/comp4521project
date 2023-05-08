@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button btnLogout;
+    Button btnLogout,btnProfile;
     TextView textViewHiUser;
     FirebaseUser user;
 
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         btnLogout = findViewById(R.id.btnLogout);
+        btnProfile = findViewById(R.id.btnProfile);
         textViewHiUser = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
         if (user == null){
@@ -36,7 +37,14 @@ public class MainActivity extends AppCompatActivity {
         else {
             textViewHiUser.setText(user.getEmail());
         }
-
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProfileSetup.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
