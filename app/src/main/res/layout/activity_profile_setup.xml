@@ -130,14 +130,14 @@
             android:background="@color/lightgrey"/>
 
         <Button
-            android:id="@+id/submit_profile"
+            android:id="@+id/btn_save_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Submit" />
+            android:text="Save Profile" />
 
         <Button
-            android:id="@+id/cancel_profile"
+            android:id="@+id/btn_cancel_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="I will do it later"
