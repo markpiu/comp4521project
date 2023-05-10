@@ -129,6 +129,21 @@
             android:entries="@array/activity_level_array"
             android:background="@color/lightgrey"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fitness Goal"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+
+        <Spinner
+            android:id="@+id/fitness_goal_profile"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10sp"
+            android:entries="@array/fitness_goal_array"
+            android:background="@color/lightgrey"/>
+
         <Button
             android:id="@+id/btn_save_profile"
             android:layout_width="match_parent"

@@ -3,31 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_height="match_parent"
-    android:padding="15dp"
+    android:gravity="center"
+    android:orientation="vertical"
 
+    android:padding="15dp"
     tools:context=".Register">
+
     <ImageView
         android:id="@+id/image_logo_login"
         android:layout_width="match_parent"
         android:layout_height="132dp"
         app:srcCompat="@drawable/fiteatlogo" />
+
     <TextView
-        android:text="@string/register"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="30sp"
-        android:layout_height="wrap_content" />
+        android:text="@string/register"
+        android:textSize="30sp" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
-            android:hint="@string/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/email"
             android:inputType="textEmailAddress">
 
         </com.google.android.material.textfield.TextInputEditText>
@@ -43,17 +47,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
-            android:inputType="textPassword"
-            >
+            android:inputType="textPassword">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ProgressBar
-        android:id = "@+id/progressBar"
-        android:visibility="gone"
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ProgressBar>
+        android:layout_height="wrap_content"
+        android:visibility="gone"></ProgressBar>
+
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
@@ -64,9 +68,9 @@
 
     <TextView
         android:id="@+id/loginNow"
-        android:text="@string/click_to_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="@string/click_to_login" />
 
 </LinearLayout>

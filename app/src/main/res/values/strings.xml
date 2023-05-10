@@ -19,4 +19,14 @@
         <item>High</item>
         <item>Extreme</item>
     </string-array>
+    <string-array name="fitness_goal_array">
+            <item>None</item>
+            <item>Weight Loss</item>
+            <item>Muscle Gain</item>
+            <item>Improve Endurance</item>
+            <item>Increase Strength</item>
+            <item>Improve Flexibility</item>
+            <item>Maintain Weight</item>
+            <item>Improve General Health</item>
+    </string-array>
 </resources>
