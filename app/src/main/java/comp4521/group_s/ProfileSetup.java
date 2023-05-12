@@ -47,10 +47,15 @@ public class ProfileSetup extends AppCompatActivity {
         Spinner fitnessGoalSpinner = findViewById(R.id.fitness_goal_profile);
 
         user = auth.getCurrentUser();
+        if (user == null){
+            Intent intent = new Intent(getApplicationContext(), ProfileSetup.class);
+            startActivity(intent);
+            finish();
+        }
         String user_id = user.getUid();
         SqlDataBaseHelper dbhelper = SqlDataBaseHelper.instanceOfDatabase(ProfileSetup.this);
         nameEditText.setText(dbhelper.GetUserName(user_id));
-        String userEmail = dbhelper.GetUserEmail(user_id);
+        String userEmail = user.getEmail();
         emailEditText.setText(userEmail);
         String dobStr = dbhelper.GetUserDOB(user_id);
         Calendar cal = Calendar.getInstance();
@@ -107,14 +112,13 @@ public class ProfileSetup extends AppCompatActivity {
 
 
                 // Update the user profile in the database
-
                 dbhelper.UpdateUserprofile(user_id, name, email, dob, gender, weight, height, activityLevel, fitnessGoal);
 
                 if(!email.equals(userEmail))
                 {
+                    user.updateEmail(email);
                     Toast.makeText(ProfileSetup.this, " Profile Saved with email Updated.",
                             Toast.LENGTH_SHORT).show();
-                    user.updateEmail(email);
                 }
                 else {
                     Toast.makeText(ProfileSetup.this, " Profile Saved.",

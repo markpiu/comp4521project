@@ -73,6 +73,8 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
         c.close();
         return name;
     }
+
+    //better not to get email from local
     public String GetUserEmail(String id){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor c = null;
