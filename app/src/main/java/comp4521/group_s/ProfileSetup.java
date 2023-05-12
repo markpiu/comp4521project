@@ -106,7 +106,13 @@ public class ProfileSetup extends AppCompatActivity {
                     gender = "Female";
                 }
                 String weight = weightEditText.getText().toString();
+                if (weight.isEmpty()) {
+                    weight = "50"; // Default weight value
+                }
                 String height = heightEditText.getText().toString();
+                if (height.isEmpty()) {
+                    height = "160"; // Default height value
+                }
                 String activityLevel = activityLevelSpinner.getSelectedItem().toString();
                 String fitnessGoal = fitnessGoalSpinner.getSelectedItem().toString();
 

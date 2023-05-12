@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.facebook.stetho.Stetho;
@@ -15,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button btnLogout,btnProfile;
+    ImageButton btnLogout,btnProfile;
     TextView textViewHiUser;
     FirebaseUser user;
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btnProfile = findViewById(R.id.btnProfile);
         textViewHiUser = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
+        SqlDataBaseHelper dbhelper = SqlDataBaseHelper.instanceOfDatabase(MainActivity.this);
 
         if (user == null){
             Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         else {
-            textViewHiUser.setText(user.getEmail());
+            textViewHiUser.setText("Hi " + dbhelper.GetUserName(user.getUid()) + "!");
         }
 
 
