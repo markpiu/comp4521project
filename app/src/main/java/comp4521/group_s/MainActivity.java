@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
-    ImageButton btnLogout,btnProfile;
+    ImageButton btnLogout,btnProfile,btnMealPlanning, btnNutrient, btnProgress, btnExpertadvice, btnAIadvice, btnSetting;
     TextView textViewHiUser;
     FirebaseUser user;
 
@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         btnLogout = findViewById(R.id.btnLogout);
         btnProfile = findViewById(R.id.btnProfile);
+        btnMealPlanning = findViewById(R.id.btnMealPlanning);
+        btnNutrient = findViewById(R.id.BtnNutrient);
+        btnProgress = findViewById(R.id.BtnProgress);
+        btnExpertadvice = findViewById(R.id.BtnExpertadvice);
+        btnAIadvice = findViewById(R.id.BtnAIadvice);
+        btnSetting = findViewById(R.id.BtnSetting);
         textViewHiUser = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
         SqlDataBaseHelper dbhelper = SqlDataBaseHelper.instanceOfDatabase(MainActivity.this);
@@ -48,6 +54,71 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ProfileSetup.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnMealPlanning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class); //todo
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnNutrient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class); //todo
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class); //todo
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnExpertadvice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class); //todo
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnAIadvice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AIAdvice.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class); //todo
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
                 finish();
             }

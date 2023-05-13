@@ -12,6 +12,7 @@
     <string name="profile_setup">Profile Setup</string>
     <string name="username">Username</string>
     <string name="dob">Date of Birth</string>
+    <string name="AIwelcometext">Welcome to FitEatGPT\nTry to ask any questions!</string>
     <string-array name="activity_level_array">
         <item>None</item>
         <item>Low</item>
@@ -20,13 +21,13 @@
         <item>Extreme</item>
     </string-array>
     <string-array name="fitness_goal_array">
-            <item>None</item>
-            <item>Weight Loss</item>
-            <item>Muscle Gain</item>
-            <item>Improve Endurance</item>
-            <item>Increase Strength</item>
-            <item>Improve Flexibility</item>
-            <item>Maintain Weight</item>
-            <item>Improve General Health</item>
+        <item>None</item>
+        <item>Weight Loss</item>
+        <item>Muscle Gain</item>
+        <item>Improve Endurance</item>
+        <item>Increase Strength</item>
+        <item>Improve Flexibility</item>
+        <item>Maintain Weight</item>
+        <item>Improve General Health</item>
     </string-array>
 </resources>
