@@ -1,19 +1,39 @@
 package comp4521.group_s;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ArticleWebsite extends AppCompatActivity {
 
     androidx.appcompat.widget.Toolbar toolbar4;
-    WebView webView;
+    FirebaseFirestore db;
+    TextView Article;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +43,7 @@ public class ArticleWebsite extends AppCompatActivity {
 
 
         toolbar4 = findViewById(R.id.toolbar4);
-
+        Article = findViewById(R.id.Article);
         toolbar4.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,10 +53,49 @@ public class ArticleWebsite extends AppCompatActivity {
             }
 
         });
-        webView = findViewById(R.id.BBCFood);
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.fitnessprofessionalonline.com/articles/");
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+
+        db = FirebaseFirestore.getInstance();
+        DocumentReference docRef = db.collection("Article").document("Article");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        String name = document.getString("4 Ways Protein Can Help You Shed Pounds");
+                        Article.setText(name);
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+        /*button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Map<String,Object> user = new HashMap<>();
+                user.put("First Name", "Samuel");
+                user.put("bye", "Bye");
+
+                db.collection("Article").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Toast.makeText(ArticleWebsite.this, "Successful", Toast.LENGTH_SHORT);
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(ArticleWebsite.this, "Failed", Toast.LENGTH_SHORT);
+                            }
+                        });
+            }
+        });*/
+
+
+
     }
 }

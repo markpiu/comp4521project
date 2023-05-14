@@ -11,18 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:logo="@drawable/fiteatlogo"
         app:navigationIcon="@drawable/ic_back_button" />
 
-    <WebView
-        android:id="@+id/BBCFood"
-        android:layout_width="409dp"
-        android:layout_height="665dp"
+    <TextView
+        android:id="@+id/Article"
+        android:layout_width="408dp"
+        android:layout_height="666dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
