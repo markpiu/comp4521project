@@ -12,6 +12,8 @@
     <string name="profile_setup">Profile Setup</string>
     <string name="username">Username</string>
     <string name="dob">Date of Birth</string>
+    <string name="btn_nutrientTracking">Nutrient Tracking</string>
+    <string name="btn_progressTracking">Progress Tracking</string>
     <string-array name="activity_level_array">
         <item>None</item>
         <item>Low</item>
@@ -28,5 +30,18 @@
             <item>Improve Flexibility</item>
             <item>Maintain Weight</item>
             <item>Improve General Health</item>
+    </string-array>
+    <string-array name="display_nutrients_array">
+        <item>Calories</item>
+        <item>Carbohydrates</item>
+        <item>Protein</item>
+        <item>Vitamins</item>
+        <item>Minerals</item>
+    </string-array>
+
+    <string-array name="display_progress_array">
+        <item>Weight</item>
+        <item>Waist Size</item>
+        <item>Hip Size</item>
     </string-array>
 </resources>

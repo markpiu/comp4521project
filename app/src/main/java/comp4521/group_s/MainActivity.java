@@ -8,14 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.facebook.stetho.Stetho;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button btnLogout,btnProfile;
+    Button btnLogout, btnProfile, btnNutrient, btnProgress;
     TextView textViewHiUser;
     FirebaseUser user;
 
@@ -29,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         btnLogout = findViewById(R.id.btnLogout);
         btnProfile = findViewById(R.id.btnProfile);
+        btnNutrient = findViewById(R.id.btn_nutrientTracking);
+        btnProgress = findViewById(R.id.btn_progressTracking);
         textViewHiUser = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
 
@@ -55,6 +56,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnNutrient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NutrientTrackingActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProgressTrackingActivity.class);
                 startActivity(intent);
                 finish();
             }
