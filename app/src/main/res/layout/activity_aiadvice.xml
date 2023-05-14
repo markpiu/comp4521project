@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:id="@+id/recycler_view"
         android:layout_below="@id/toolbar"
-        android:layout_above="@id/bottom_layout"
+        android:layout_above="@id/suggest_questions_layout"
         />
 
     <TextView
@@ -30,6 +30,25 @@
         android:gravity="center"
         android:text="@string/AIwelcometext"
         android:textSize="28dp" />
+
+    <RelativeLayout
+        android:id="@+id/suggest_questions_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_layout"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/suggest_questions_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/purple_light"
+            android:padding="8dp"
+            android:text="Suggested Question: Hi! Can you suggest me some tips about fitness?"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -47,6 +66,7 @@
             android:background="@drawable/rounded_corner"
             android:hint="Ask your question here"
             android:padding="16dp" />
+
         <ImageButton
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -57,12 +77,6 @@
             android:padding="8dp"
             android:src="@drawable/ic_baseline_send_24"
             android:background="?attr/selectableItemBackgroundBorderless"
-
             />
-
-
     </RelativeLayout>
-
-
-
 </RelativeLayout>

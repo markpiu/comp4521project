@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,7 +37,8 @@ public class AIAdvice extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseUser user;
     RecyclerView recyclerView;
-    TextView welcomeTextView;
+    TextView welcomeTextView, suggestedQuestionsText;
+    RelativeLayout suggestQuestionsLayout;
     EditText messageEditText;
     ImageButton sendButton;
     List<AIMessage> messageList;
@@ -53,18 +55,30 @@ public class AIAdvice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aiadvice);
 
-        messageList = new ArrayList<>();
-
-        recyclerView = findViewById(R.id.recycler_view);
-        welcomeTextView = findViewById(R.id.welcome_text);
-        messageEditText = findViewById(R.id.message_edit_text);
-        sendButton = findViewById(R.id.send_btn);
-
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        messageList = new ArrayList<>();
+        SqlDataBaseHelper dbhelper = SqlDataBaseHelper.instanceOfDatabase(AIAdvice.this);
+
+        recyclerView = findViewById(R.id.recycler_view);
+        welcomeTextView = findViewById(R.id.welcome_text);
+        messageEditText = findViewById(R.id.message_edit_text);
+        sendButton = findViewById(R.id.send_btn);
+        suggestedQuestionsText = findViewById(R.id.suggest_questions_text);
+        suggestQuestionsLayout = findViewById(R.id.suggest_questions_layout);
+        String userid = user.getUid();
+        String suggestedquestion = "Suggested Question : Hi! Can you suggest me some tips about fitness?";
+        String userfitnessgoal = dbhelper.GetUserFitnessGoal(userid);
+        if(!userfitnessgoal.equals("None"))
+            suggestedquestion = "uggested Question : Hi! Can you suggest me some tips about " + userfitnessgoal + " ?";
+        suggestedQuestionsText.setText(suggestedquestion);
+        suggestQuestionsLayout.setVisibility(View.VISIBLE);
+
+
+
 
         if (user == null) {
             Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -94,12 +108,27 @@ public class AIAdvice extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String question = messageEditText.getText().toString().trim();
-                addToChat(question, AIMessage.SENT_BY_ME);
-                messageEditText.setText("");
-                callAPI(question);
-                welcomeTextView.setVisibility(View.GONE);
+                if (!question.equals("")) {
+                    addToChat(question, AIMessage.SENT_BY_ME);
+                    messageEditText.setText("");
+                    callAPI(question);
+                    welcomeTextView.setVisibility(View.GONE);
+                    suggestQuestionsLayout.setVisibility(View.GONE);
+                }
             }
         });
+
+        String finalSuggestedquestion = suggestedquestion;
+        suggestedQuestionsText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addToChat(finalSuggestedquestion, AIMessage.SENT_BY_ME);
+                callAPI(finalSuggestedquestion);
+                welcomeTextView.setVisibility(View.GONE);
+                suggestQuestionsLayout.setVisibility(View.GONE);
+            }
+        });
+
     }
 
 
