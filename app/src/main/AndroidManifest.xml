@@ -45,6 +45,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".NutrientTrackingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+        <activity
+            android:name=".ProgressTrackingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />

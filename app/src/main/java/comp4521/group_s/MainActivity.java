@@ -130,5 +130,23 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        btnNutrient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NutrientTrackingActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProgressTrackingActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }
