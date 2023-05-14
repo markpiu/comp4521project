@@ -13,6 +13,11 @@
     <string name="username">Username</string>
     <string name="dob">Date of Birth</string>
     <string name="AIwelcometext">Welcome to FitEatGPT\nTry to ask any questions!</string>
+    <string name="btnBack">btnBack</string>
+    <string name="btnBreakfast">btnBreakfast</string>
+    <string name="btnLunch">btnLunch</string>
+    <string name="btnDinner">btnDinner</string>
+    <string name="BMI">BMI</string>
     <string-array name="activity_level_array">
         <item>None</item>
         <item>Low</item>

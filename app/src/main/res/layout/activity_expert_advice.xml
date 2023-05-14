@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExpertAdvice">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:logo="@drawable/fiteatlogo"
+        app:navigationIcon="@drawable/ic_back_button"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/personalData"
+        android:layout_width="409dp"
+        android:layout_height="133dp"
+        android:outlineProvider="bounds"
+        android:text="@string/username"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/BMI"
+        android:layout_width="403dp"
+        android:layout_height="99dp"
+        android:outlineProvider="bounds"
+        android:text="@string/BMI"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personalData"
+        app:layout_constraintVertical_bias="0.114" />
+
+    <ImageButton
+        android:id="@+id/ProteinBtn"
+        android:layout_width="207dp"
+        android:layout_height="206dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/asset_1meal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/BMI"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/ArticleBtn"
+        app:layout_constraintTop_toBottomOf="@+id/BMI"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/ArticleBtn"
+        android:layout_width="210dp"
+        android:layout_height="206dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/asset_2meal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BMI"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="406dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/asset_3meal"
+        app:layout_constraintStart_toStartOf="@+id/BMI"
+        app:layout_constraintTop_toBottomOf="@+id/personalData" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

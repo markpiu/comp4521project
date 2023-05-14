@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.facebook.stetho.Stetho;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         btnMealPlanning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class); //todo
+                Intent intent = new Intent(getApplicationContext(), MealPlanning.class);
                 startActivity(intent);
                 finish();
             }
@@ -89,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         btnExpertadvice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class); //todo
+                Intent intent = new Intent(getApplicationContext(), ExpertAdvice.class);
                 startActivity(intent);
                 finish();
             }
