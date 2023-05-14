@@ -22,6 +22,8 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,6 +40,11 @@ public class ProgressTrackingActivity extends AppCompatActivity {
     Cursor cursor;
     String progressChosen;
     Spinner spinner;
+
+    FirebaseAuth auth;
+    FirebaseUser user;
+
+    androidx.appcompat.widget.Toolbar toolbar;
 
     @SuppressLint("Range")
     @Override
@@ -61,6 +68,27 @@ public class ProgressTrackingActivity extends AppCompatActivity {
             Log.i("database open: ", "Database open exception");
             e.printStackTrace();
         }
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (user == null) {
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            startActivity(intent);
+            finish();
+        }
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

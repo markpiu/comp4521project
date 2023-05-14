@@ -28,6 +28,8 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,13 +47,18 @@ public class NutrientTrackingActivity extends AppCompatActivity {
     Spinner spinner;
     float averageConsumption = 0;
 
+    FirebaseAuth auth;
+    FirebaseUser user;
+
+    androidx.appcompat.widget.Toolbar toolbar;
+
     @SuppressLint("Range")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrient_tracking);
-        btnMenu = findViewById(R.id.btnMenu);
         lineChart = findViewById(R.id.nutrientLineChart);
+        btnMenu = findViewById(R.id.btnMenu);
         btnNutrientInput = findViewById(R.id.btnNutrientInput);
         spinner = findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(NutrientTrackingActivity.this,
@@ -67,6 +74,27 @@ public class NutrientTrackingActivity extends AppCompatActivity {
             Log.i("database open: ", "Database open exception");
             e.printStackTrace();
         }
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (user == null) {
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            startActivity(intent);
+            finish();
+        }
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
