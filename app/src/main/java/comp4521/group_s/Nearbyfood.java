@@ -69,7 +69,7 @@ public class Nearbyfood extends AppCompatActivity implements OnMapReadyCallback 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MealPlanning.class);
                 startActivity(intent);
                 finish();
             }

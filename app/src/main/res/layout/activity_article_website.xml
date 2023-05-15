@@ -15,18 +15,30 @@
         app:logo="@drawable/fiteatlogo"
         app:navigationIcon="@drawable/ic_back_button" />
 
-    <TextView
-        android:id="@+id/ArticleTopic"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="30sp" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/Article"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TextView"
-        android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/ArticleTopic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/Article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -47,7 +47,7 @@ public class ArticleWebsite extends AppCompatActivity {
         toolbar4.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ExpertAdvice.class);
                 startActivity(intent);
                 finish();
             }

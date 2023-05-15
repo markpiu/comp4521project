@@ -40,7 +40,7 @@ public class ProteinSuggestion extends AppCompatActivity {
         }
 
         toolbar.setNavigationOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ExpertAdvice.class);
             startActivity(intent);
             finish();
         });
