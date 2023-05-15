@@ -76,28 +76,6 @@ public class ArticleWebsite extends AppCompatActivity {
                 }
             }
         });
-        /*button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Map<String,Object> user = new HashMap<>();
-                user.put("First Name", "Samuel");
-                user.put("bye", "Bye");
-
-                db.collection("Article").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Toast.makeText(ArticleWebsite.this, "Successful", Toast.LENGTH_SHORT);
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(ArticleWebsite.this, "Failed", Toast.LENGTH_SHORT);
-                            }
-                        });
-            }
-        });*/
-
-
 
     }
 }

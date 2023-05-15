@@ -39,6 +39,17 @@ public class ExpertAdvice extends AppCompatActivity {
 
         });
         ArticleBtn = findViewById(R.id.ArticleBtn);
+        ProteinBtn = findViewById(R.id.ProteinBtn);
+
+        ProteinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProteinSuggestion.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
         ArticleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
