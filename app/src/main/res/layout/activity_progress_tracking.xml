@@ -19,7 +19,8 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:entries="@array/display_progress_array" />
 
 
 
@@ -43,8 +44,8 @@
         android:inputType="number|numberDecimal"/>
 
     <Button
-        android:id="@+id/btnMenu"
-        android:text="Back To Main Menu"
+        android:id="@+id/btnNext"
+        android:text="Input Next item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

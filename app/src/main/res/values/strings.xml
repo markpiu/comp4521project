@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Comp 4521 project</string>
+    <string name="app_name">FitEat</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -38,16 +38,16 @@
         <item>Improve General Health</item>
     </string-array>
     <string-array name="display_nutrients_array">
-        <item>Calories</item>
-        <item>Carbohydrates</item>
-        <item>Protein</item>
-        <item>Vitamins</item>
-        <item>Minerals</item>
+        <item>Calories (kcal)</item>
+        <item>Carbohydrates (g)</item>
+        <item>Protein (g)</item>
+        <item>Vitamins (mg)</item>
+        <item>Minerals (mg)</item>
     </string-array>
 
     <string-array name="display_progress_array">
-        <item>Weight</item>
-        <item>Waist Size</item>
-        <item>Hip Size</item>
+        <item>Weight (KG)</item>
+        <item>Waist Size (CM)</item>
+        <item>Hip Size (CM)</item>
     </string-array>
 </resources>

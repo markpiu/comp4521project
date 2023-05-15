@@ -30,7 +30,7 @@ import java.util.Date;
 
 public class ProgressTrackingActivity extends AppCompatActivity {
 
-    Button btnMenu;
+    Button btnNext;
     EditText progressInput;
     int current_ID;
     int counter;
@@ -51,7 +51,7 @@ public class ProgressTrackingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress_tracking);
-        btnMenu = findViewById(R.id.btnMenu);
+        btnNext = findViewById(R.id.btnNext);
         lineChart = findViewById(R.id.progressLineChart);
         progressInput = findViewById(R.id.progressInput);
         spinner = findViewById(R.id.spinner);
@@ -110,10 +110,24 @@ public class ProgressTrackingActivity extends AppCompatActivity {
 
                 refreshLineChart();
 
-                btnMenu.setOnClickListener(view -> {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                btnNext.setOnClickListener(view -> {
+                    int currentPosition = spinner.getSelectedItemPosition();
+                    //Calculate the position of the next item
+                    int nextPosition = currentPosition + 1;
+
+                    if (nextPosition + 1 >= spinner.getCount()) {
+                        btnNext.setText("Back to Menu");
+                    }
+                    //If the next position exceeds the total number of items, loop back to the first item (0 position)
+                    if (nextPosition >= spinner.getCount()) {
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }else {
+
+                        //Set the next item as selected in the Spinner
+                        spinner.setSelection(nextPosition);
+                    }
                 });
 
                 progressInput.setOnEditorActionListener((v, actionId, event) -> {

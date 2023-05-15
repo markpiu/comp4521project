@@ -36,7 +36,7 @@ import java.util.Date;
 
 public class NutrientTrackingActivity extends AppCompatActivity {
 
-    Button btnMenu, btnNutrientInput;
+    Button btnNext, btnNutrientInput;
     int counter;
     int current_ID;
     LineChart lineChart;
@@ -58,8 +58,8 @@ public class NutrientTrackingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrient_tracking);
         lineChart = findViewById(R.id.nutrientLineChart);
-        btnMenu = findViewById(R.id.btnMenu);
         btnNutrientInput = findViewById(R.id.btnNutrientInput);
+        btnNext = findViewById(R.id.btnNext);
         spinner = findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(NutrientTrackingActivity.this,
                     android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.display_nutrients_array));
@@ -114,10 +114,24 @@ public class NutrientTrackingActivity extends AppCompatActivity {
 
                 refreshLineChart();
 
-                btnMenu.setOnClickListener(view -> {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                btnNext.setOnClickListener(view -> {
+                    int currentPosition = spinner.getSelectedItemPosition();
+                    //Calculate the position of the next item
+                    int nextPosition = currentPosition + 1;
+
+                    if (nextPosition + 1 >= spinner.getCount()) {
+                        btnNext.setText("Back to Menu");
+                    }
+                    //If the next position exceeds the total number of items, loop back to the first item (0 position)
+                    if (nextPosition >= spinner.getCount()) {
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }else {
+
+                        //Set the next item as selected in the Spinner
+                        spinner.setSelection(nextPosition);
+                    }
                 });
             }
 
