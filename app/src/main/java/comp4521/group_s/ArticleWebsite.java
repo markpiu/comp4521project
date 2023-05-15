@@ -33,7 +33,7 @@ public class ArticleWebsite extends AppCompatActivity {
 
     androidx.appcompat.widget.Toolbar toolbar4;
     FirebaseFirestore db;
-    TextView Article;
+    TextView ArticleTopic, Article;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +42,7 @@ public class ArticleWebsite extends AppCompatActivity {
 
 
         toolbar4 = findViewById(R.id.toolbar4);
+        ArticleTopic = findViewById(R.id.ArticleTopic);
         Article = findViewById(R.id.Article);
         toolbar4.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +62,10 @@ public class ArticleWebsite extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        String name = document.getString("4 Ways Protein Can Help You Shed Pounds");
-                        Article.setText(name);
+                        String art_topic = document.getString("topic");
+                        ArticleTopic.setText(art_topic);
+                        String art_text = document.getString("text");
+                        Article.setText(art_text);
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
 
                     } else {
