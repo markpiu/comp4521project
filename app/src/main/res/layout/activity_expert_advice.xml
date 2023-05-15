@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ExpertAdvice">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:logo="@drawable/fiteatlogo"
+        app:navigationIcon="@drawable/ic_back_button"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/personalData"
+        android:layout_width="match_parent"
+        android:layout_height="117dp"
+        android:layout_margin="5dp"
+        android:outlineProvider="bounds"
+        android:text="@string/username"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/asset_3meal" />
+
+    <TextView
+        android:id="@+id/BMI"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:layout_margin="5dp"
+        android:outlineProvider="bounds"
+        android:text="@string/BMI"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ArticleBtn"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/asset_2meal" />
+
+        <ImageButton
+            android:id="@+id/ProteinBtn"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/asset_1meal" />
+    </LinearLayout>
+</LinearLayout>

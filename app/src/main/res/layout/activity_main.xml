@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:logo="@drawable/fiteatlogo"/>
+
+
+        <TextView
+            android:id="@+id/user_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hi User!"
+            android:textSize="30sp"
+            android:layout_margin="15sp"
+            />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:rowCount="4"
+            android:alignmentMode="alignMargins"
+            android:padding="16dp">
+
+
+            <ImageButton
+                android:id="@+id/btnProfile"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/profile_icon"
+                android:contentDescription="Profile Setup"/>
+
+            <ImageButton
+                android:id="@+id/btnMealPlanning"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/meal_plan_icon"
+                android:contentDescription="Meal Planning"
+                />
+
+            <ImageButton
+                android:id="@+id/BtnNutrient"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nutrient_icon"
+                android:contentDescription="Nutrient Tracking"
+                />
+
+            <ImageButton
+                android:id="@+id/BtnProgress"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/progress_icon"
+                android:contentDescription="Progress Tracking"
+                />
+
+            <ImageButton
+                android:id="@+id/BtnExpertadvice"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/expert_advice_icon"
+                android:contentDescription="Expert Advice"
+                />
+
+            <ImageButton
+                android:id="@+id/BtnAIadvice"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ai_advice_icon"
+                android:contentDescription="AI Advice"
+                />
+
+            <ImageButton
+                android:id="@+id/BtnSetting"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/setting_icon"
+                android:contentDescription="Setting"
+                />
+            <ImageButton
+                android:id="@+id/btnLogout"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/sign_out_icon"
+                android:contentDescription="Sign Out"
+                />
+
+        </GridLayout>
+    </LinearLayout>
+
+
+
+
+    </ScrollView>

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">FitEat</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Have an Account? Click to Login</string>
+    <string name="click_to_register">Do not have an account? Click to Register</string>
+    <string name="logout">Logout</string>
+    <string name="otherloginoption">Or sign in with</string>
+    <string name="forgotpassword">Forgot your password? Click here</string>
+    <string name="profile_setup">Profile Setup</string>
+    <string name="username">Username</string>
+    <string name="dob">Date of Birth</string>
+    <string name="AIwelcometext">Welcome to FitEatGPT\nTry to ask any questions!</string>
+    <string name="btnBack">btnBack</string>
+    <string name="btnBreakfast">btnBreakfast</string>
+    <string name="btnLunch">btnLunch</string>
+    <string name="btnDinner">btnDinner</string>
+    <string name="BMI">BMI</string>
+    <string name="btn_nutrientTracking">Nutrient Tracking</string>
+    <string name="btn_progressTracking">Progress Tracking</string>
+    <string-array name="activity_level_array">
+        <item>None</item>
+        <item>Low</item>
+        <item>Moderate</item>
+        <item>High</item>
+        <item>Extreme</item>
+    </string-array>
+    <string-array name="fitness_goal_array">
+        <item>None</item>
+        <item>Weight Loss</item>
+        <item>Muscle Gain</item>
+        <item>Improve Endurance</item>
+        <item>Increase Strength</item>
+        <item>Improve Flexibility</item>
+        <item>Maintain Weight</item>
+        <item>Improve General Health</item>
+    </string-array>
+    <string-array name="display_nutrients_array">
+        <item>Calories (kcal)</item>
+        <item>Carbohydrates (g)</item>
+        <item>Protein (g)</item>
+        <item>Vitamins (mg)</item>
+        <item>Minerals (mg)</item>
+    </string-array>
+
+    <string-array name="display_progress_array">
+        <item>Weight (KG)</item>
+        <item>Waist Size (CM)</item>
+        <item>Hip Size (CM)</item>
+    </string-array>
+</resources>
