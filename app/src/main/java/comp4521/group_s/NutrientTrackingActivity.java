@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -188,6 +189,24 @@ public class NutrientTrackingActivity extends AppCompatActivity {
         LinearLayout inputPrompt = new LinearLayout(this);
         inputPrompt.setOrientation(LinearLayout.VERTICAL);
 
+        int paddingPixel = 10;  // for example
+        float density = this.getResources().getDisplayMetrics().density;
+        int paddingDp = (int)(paddingPixel * density);
+        inputPrompt.setPadding(paddingDp, paddingDp, paddingDp, paddingDp);
+
+        TextView breakfastTextView = new TextView(this);
+        breakfastTextView.setText("Breakfast");
+        breakfastTextView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        breakfastTextView.setTextSize(18); // set text size here
+
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        int leftMarginDp = 16; // for example
+        int leftMarginPixel = (int)(leftMarginDp * density);
+        layoutParams.setMargins(leftMarginPixel, 0, 0, 0);
+        breakfastTextView.setLayoutParams(layoutParams);
+
+        inputPrompt.addView(breakfastTextView); // Add TextView to your LinearLayout
+
         final Spinner breakfastSpinner = new Spinner(this);
         Food[] breakfasts = { new Food("None", 0f, 0f, 0f, 0f, 0f),
                               new Food("Toast", 64f, 12f, 2f,0f, 14.2f),
@@ -198,8 +217,20 @@ public class NutrientTrackingActivity extends AppCompatActivity {
             breakfast_names.add(f.getName());
         final ArrayAdapter<String> breakfastAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, breakfast_names);
-        breakfastSpinner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        breakfastSpinner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         breakfastSpinner.setAdapter(breakfastAdapter);
+        inputPrompt.addView(breakfastSpinner);
+
+        TextView lunchTextView = new TextView(this);
+        lunchTextView.setText("Lunch");
+        lunchTextView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        lunchTextView.setTextSize(18); // set text size here
+
+        lunchTextView.setLayoutParams(layoutParams);
+
+        inputPrompt.addView(lunchTextView);
+
+
 
         final Spinner lunchSpinner = new Spinner(this);
         Food[] lunches = { new Food("None", 0f, 0f, 0f, 0f, 0f),
@@ -211,8 +242,18 @@ public class NutrientTrackingActivity extends AppCompatActivity {
             lunch_names.add(f.getName());
         final ArrayAdapter<String> lunchAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, lunch_names);
-        lunchSpinner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        lunchSpinner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         lunchSpinner.setAdapter(lunchAdapter);
+        inputPrompt.addView(lunchSpinner);
+
+        TextView dinnerTextView = new TextView(this);
+        dinnerTextView.setText("Dinner");
+        dinnerTextView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        dinnerTextView.setTextSize(18); // set text size here
+
+        dinnerTextView.setLayoutParams(layoutParams);
+
+        inputPrompt.addView(dinnerTextView);
 
         final Spinner dinnerSpinner = new Spinner(this);
         Food[] dinners = { new Food("None", 0f, 0f, 0f, 0f, 0f),
@@ -224,8 +265,9 @@ public class NutrientTrackingActivity extends AppCompatActivity {
             dinner_names.add(f.getName());
         final ArrayAdapter<String> dinnerAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, dinner_names);
-        dinnerSpinner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        dinnerSpinner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         dinnerSpinner.setAdapter(dinnerAdapter);
+        inputPrompt.addView(dinnerSpinner);
 
         alert.setPositiveButton("Submit Meals Eaten", (dialog, whichButton) -> {
             Food breakfastChosen = getFood(breakfastSpinner.getSelectedItem().toString(), breakfasts);
@@ -244,9 +286,6 @@ public class NutrientTrackingActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Added!", Toast.LENGTH_SHORT).show();
         });
 
-        inputPrompt.addView(breakfastSpinner);
-        inputPrompt.addView(lunchSpinner);
-        inputPrompt.addView(dinnerSpinner);
 
         alert.setView(inputPrompt);
         alert.create().show();

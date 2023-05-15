@@ -4,29 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MealPlanning">
+    tools:context=".MealPlanning">>
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:logo="@drawable/fiteatlogo"
-        app:navigationIcon="@drawable/ic_back_button" />
+        app:navigationIcon="@drawable/ic_back_button"
+        />
 
-    <SearchView
-        android:id="@+id/search"
-        android:layout_width="468dp"
-        android:layout_height="61dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="71dp"/>
-
-    <ListView
+    <Button
+        android:id="@+id/btnFoodDatabase"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/list"
-        android:layout_below="@+id/search"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:drawablePadding="8dp"
+        android:padding="16dp"
+        android:text="Food Database"
+        android:textAllCaps="false"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnFindFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnFoodDatabase"
+        android:layout_margin="16dp"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:drawablePadding="8dp"
+        android:padding="16dp"
+        android:text="Find Nearby Food"
+        android:textAllCaps="false"
+        android:textSize="24sp" />
 
 </RelativeLayout>

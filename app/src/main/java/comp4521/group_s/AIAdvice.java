@@ -73,7 +73,7 @@ public class AIAdvice extends AppCompatActivity {
         String suggestedquestion = "Suggested Question : Hi! Can you suggest me some tips about fitness?";
         String userfitnessgoal = dbhelper.GetUserFitnessGoal(userid);
         if(!userfitnessgoal.equals("None"))
-            suggestedquestion = "uggested Question : Hi! Can you suggest me some tips about " + userfitnessgoal + " ?";
+            suggestedquestion = "Suggested Question : Hi! Can you suggest me some tips about " + userfitnessgoal + " ?";
         suggestedQuestionsText.setText(suggestedquestion);
         suggestQuestionsLayout.setVisibility(View.VISIBLE);
 
